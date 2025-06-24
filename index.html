@@ -3,20 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rack It – by Loons & Leaves</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Loons & Leaves</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #fefefe;
-      color: #222;
+      background-color: #111;
+      color: #eee;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 0;
     }
 
     header {
@@ -43,10 +40,26 @@
       text-align: center;
     }
 
-    main img.app-icon {
-      width: 100px;
-      border-radius: 16px;
-      margin-bottom: 1rem;
+    .project-section {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: 3rem;
+      gap: 1.5rem;
+      text-align: left;
+      flex-wrap: wrap;
+    }
+
+    .project-section img {
+      width: 120px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.05);
+    }
+
+    .project-info {
+      max-width: 500px;
     }
 
     h2 {
@@ -57,41 +70,25 @@
     p {
       font-size: 1rem;
       line-height: 1.6;
+      color: #ccc;
     }
 
     a {
-      color: #007acc;
+      color: #58a6ff;
       text-decoration: none;
       font-weight: 600;
     }
 
-    .project-section {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      align-items: center;
-      margin-top: 3rem;
-      gap: 1.5rem;
-      text-align: left;
-    }
-
-    .project-section img {
-      width: 120px;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    .project-info {
-      max-width: 500px;
+    a:hover {
+      text-decoration: underline;
     }
 
     footer {
       width: 100%;
       text-align: center;
       padding: 1rem;
-      background: #f1f1f1;
-      color: #666;
+      background: #1a1a1a;
+      color: #888;
       font-size: 0.9rem;
       margin-top: auto;
     }
@@ -101,8 +98,6 @@
         flex-direction: column;
         align-items: flex-start;
       }
-
-     
     }
   </style>
 </head>
@@ -111,39 +106,38 @@
   <header>
     <img src="Loons & Leaves Logo.png" alt="Loons & Leaves Logo" />
     <h1>Loons & Leaves</h1>
-    <p>Bringing you smart tools for serious lifters and wellness communities.</p>
+    <p>Smart tools for serious lifters and wellness communities.</p>
   </header>
 
   <main>
-  <div class="project-section">
-    <img src="app_icon.png" alt="Rack It App Icon" />
-    <div class="project-info">
-      <h2>Rack It – Smart Plate Calculator</h2>
-      <p>Need to load 275 lbs? Rack It tells you exactly which plates to throw on the barbell — in pounds or kilograms.</p>
-      <p>Includes premium features, plate themes, max tracking, and support for specialty barbells.</p>
-      <p><a href="privacy.html">View Privacy Policy</a></p>
+
+    <div class="project-section">
+      <img src="app_icon.png" alt="Rack It App Icon" />
+      <div class="project-info">
+        <h2>Rack It – Smart Plate Calculator</h2>
+        <p>Need to load 275 lbs? Rack It tells you exactly which plates to throw on the barbell — in pounds or kilograms.</p>
+        <p>Includes premium features, plate themes, max tracking, and support for specialty barbells.</p>
+        <p><a href="privacy.html">View Privacy Policy</a></p>
+      </div>
     </div>
-  </div>
 
-  <div class="project-section">
-  <img src="Miles Together Logo.png" alt="Miles Together Logo" />
-  <div class="project-info">
-    <h2>Miles Together – Team Fitness Adventures</h2>
-    <p>Miles Together lets teams track distance and elevation as a group toward fun goals (like crossing Canada or climbing Everest).</p>
-    <p>Built for work wellness challenges, running clubs, and friends who want to stay active together.</p>
-    <p><a href="https://milestogetherapp.com" target="_blank">Visit Miles Together →</a></p>
-  </div>
-</div>
+    <div class="project-section">
+      <img src="Miles Together Logo.png" alt="Miles Together Logo" />
+      <div class="project-info">
+        <h2>Miles Together – Team Fitness Adventures</h2>
+        <p>Miles Together lets teams track distance and elevation as a group toward fun goals (like crossing Canada or climbing Everest).</p>
+        <p>Built for work wellness challenges, running clubs, and friends who want to stay active together.</p>
+        <p><a href="https://milestogetherapp.com" target="_blank">Visit Miles Together →</a></p>
+      </div>
+    </div>
 
+    <p style="margin-top: 3rem;"><a href="about.html">Learn more about us →</a></p>
 
-</main>
+  </main>
 
-
-<footer>
-  &copy; 2025 Loons & Leaves. All rights reserved. |
-  <a href="about.html">About</a>
-</footer>
-
+  <footer>
+    &copy; 2025 Loons & Leaves. All rights reserved.
+  </footer>
 
 </body>
 </html>
