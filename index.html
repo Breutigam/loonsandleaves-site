@@ -23,8 +23,13 @@
       width: 100%;
       background-color: #1a1a1a;
       color: #fff;
-      padding: 2rem 1rem;
+      padding: 2rem 1rem 1rem;
       text-align: center;
+    }
+
+    header img {
+      width: 140px;
+      margin-bottom: 1rem;
     }
 
     header h1 {
@@ -33,13 +38,13 @@
     }
 
     main {
-      max-width: 700px;
+      max-width: 900px;
       padding: 2rem 1rem;
       text-align: center;
     }
 
-    main img {
-      width: 120px;
+    main img.app-icon {
+      width: 100px;
       border-radius: 16px;
       margin-bottom: 1rem;
     }
@@ -60,6 +65,27 @@
       font-weight: 600;
     }
 
+    .project-section {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: 3rem;
+      gap: 1.5rem;
+      text-align: left;
+    }
+
+    .project-section img {
+      width: 120px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .project-info {
+      max-width: 500px;
+    }
+
     footer {
       width: 100%;
       text-align: center;
@@ -69,22 +95,44 @@
       font-size: 0.9rem;
       margin-top: auto;
     }
+
+    @media (max-width: 600px) {
+      .project-section {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header>
+    <img src="Loons & Leaves Logo.png" alt="Loons & Leaves Logo" />
     <h1>Loons & Leaves</h1>
-    <p>Bringing you smart tools for serious lifters.</p>
+    <p>Bringing you smart tools for serious lifters and wellness communities.</p>
   </header>
 
   <main>
+  <div class="project-section">
     <img src="app_icon.png" alt="Rack It App Icon" />
-    <h2>Rack It – Smart Plate Calculator</h2>
-    <p>Need to load 275 lbs? Rack It tells you exactly which plates to throw on the barbell — in pounds or kilograms.</p>
-    <p>Includes premium features, plate themes, max tracking, and support for specialty barbells.</p>
-    <p><a href="privacy.html">View Privacy Policy</a></p>
-  </main>
+    <div class="project-info">
+      <h2>Rack It – Smart Plate Calculator</h2>
+      <p>Need to load 275 lbs? Rack It tells you exactly which plates to throw on the barbell — in pounds or kilograms.</p>
+      <p>Includes premium features, plate themes, max tracking, and support for specialty barbells.</p>
+      <p><a href="privacy.html">View Privacy Policy</a></p>
+    </div>
+  </div>
+
+  <div class="project-section">
+    <img src="Miles Together Logo.png" alt="Miles Together Logo" />
+    <div class="project-info">
+      <h2>Miles Together – Team Fitness Adventures</h2>
+      <p>Miles Together lets teams track distance and elevation as a group toward fun goals (like crossing Canada or climbing Everest).</p>
+      <p>Built for work wellness challenges, running clubs, and friends who want to stay active together.</p>
+    </div>
+  </div>
+</main>
+
 
   <footer>
     &copy; 2025 Loons & Leaves. All rights reserved.
