@@ -21,6 +21,11 @@
       margin-bottom: 1rem;
     }
 
+    h2 {
+      font-size: 1.4rem;
+      margin: 1rem 0 0.5rem;
+    }
+
     p {
       line-height: 1.6;
       font-size: 1rem;
@@ -30,18 +35,52 @@
       color: #007acc;
       text-decoration: none;
     }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .profile img {
+      width: 140px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .bio {
+      flex: 1;
+      min-width: 250px;
+    }
   </style>
 </head>
 <body>
   <h1>About Loons & Leaves</h1>
   <p>
-    Loons & Leaves is an indie software and wellness brand based in Canada. We create simple, focused tools that help people live stronger, healthier, and more connected lives.
+    Loons & Leaves is an indie wellness and fitness-focused software brand based in Canada. We design simple, focused tools to help people move better, train smarter, and stay motivated — together.
   </p>
+
+  <div class="profile">
+    <img src="IMG_0230.jpg" alt="Breut – Lead Developer" />
+    <div class="bio">
+      <h2>Meet Breut</h2>
+      <p>
+        Breut is the lead developer and creative force behind Loons & Leaves. A lifelong learner with a deep love for strength training, Breut brings together fitness knowledge and technical skill to build digital tools that empower others on their health journey.
+      </p>
+      <p>
+        From developing smart weightlifting utilities to collaborative team fitness apps, Breut’s passion is helping others find joy in movement, discipline in training, and progress they can feel.
+      </p>
+    </div>
+  </div>
+
   <p>
-    Whether you're lifting in the gym with <strong>Rack It</strong>, or hiking across virtual landscapes with your team in <strong>Miles Together</strong>, our mission is to make progress feel satisfying, beautiful, and fun.
+    Whether you're tracking your barbell setup with <strong>Rack It</strong> or joining your team on a long-distance challenge in <strong>Miles Together</strong>, our mission is to make progress feel satisfying, beautiful, and fun.
   </p>
-  <p>
-    <a href="index.html">← Back to Home</a>
-  </p>
+
+  <p><a href="index.html">← Back to Home</a></p>
 </body>
 </html>
