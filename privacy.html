@@ -25,7 +25,7 @@
       margin-top: 2rem;
     }
 
-    p {
+    p, li {
       line-height: 1.6;
       color: #ccc;
     }
@@ -55,6 +55,14 @@
     nav a:hover {
       text-decoration: underline;
     }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    .emoji {
+      font-size: 1.2em;
+    }
   </style>
 </head>
 <body>
@@ -67,39 +75,101 @@
   </nav>
 
   <h1>Privacy Policy for Rack It</h1>
-  <p><strong>Effective Date:</strong> 2025-06-23</p>
+  <p><strong>Effective Date:</strong> [Insert date]</p>
 
-  <p>Thank you for using Rack It!</p>
+  <p>Welcome to Rack It, a mobile application designed to help weightlifters calculate optimal barbell plate loads, track max lifts, and personalize their lifting experience. Your privacy is important to us. This Privacy Policy outlines what data we collect, why we collect it, how we store it, who we share it with, and what rights you have.</p>
 
-  <p>Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information when you use the Rack It mobile application.</p>
+  <h2><span class="emoji">🔍</span> What Data Is Collected</h2>
+  <p>We collect the following types of data:</p>
+  <ol>
+    <li><strong>Account Information</strong><br />
+    • Email address and password (for registered users)<br />
+    • Session ID (for guest mode users)</li>
 
-  <h2>1. Information We Collect</h2>
-  <p>We do not collect any personally identifiable information (such as name, email, phone number, or address).</p>
-  <p>However, we do collect anonymous usage data to help us understand how users interact with the app. This data may include:</p>
+    <li><strong>User Preferences & Settings</strong><br />
+    • Unit preference (lbs or kg)<br />
+    • Selected barbell (type and weight)<br />
+    • Collar toggle and weight<br />
+    • Plate theme and customization<br />
+    • Max inventory toggle and plate lock states<br />
+    • Premium subscription status</li>
+
+    <li><strong>Lifting Data</strong><br />
+    • Max lift records (e.g., squat, bench, deadlift)<br />
+    • PR calculator inputs (weight, reps)<br />
+    • Rack height data (squat, bench, safeties, gym name, notes)<br />
+    • Target weight inputs and calculated plate configurations</li>
+
+    <li><strong>Local Content</strong><br />
+    • Metadata for user-uploaded documents (e.g., titles, timestamps)</li>
+
+    <li><strong>Device & App Analytics</strong><br />
+    • App usage data (e.g., screen visits, feature use)<br />
+    • Limited diagnostic data (e.g., app crashes)</li>
+
+    <li><strong>Advertisements</strong><br />
+    • Non-personalized ad interactions (only in free version)<br />
+    • Ad view impressions (via AdMob)</li>
+  </ol>
+
+  <h2><span class="emoji">🤔</span> Why We Collect This Data</h2>
+  <p>We collect data to:</p>
   <ul>
-    <li>Features you use within the app</li>
-    <li>Frequency and duration of app usage</li>
-    <li>General device information (such as device type and operating system)</li>
+    <li>Provide core app functionality (e.g., plate calculator)</li>
+    <li>Save your preferences across sessions</li>
+    <li>Enable optional premium features</li>
+    <li>Improve app performance and fix bugs</li>
+    <li>Show non-intrusive ads in the free version</li>
+    <li>Store your personalized equipment configurations</li>
+    <li>Track and calculate personal records</li>
+    <li>Enhance your user experience with saved settings and themes</li>
   </ul>
-  <p>This information is collected without identifying you personally.</p>
 
-  <h2>2. How We Use This Information</h2>
-  <p>We use anonymous usage data to:</p>
+  <h2><span class="emoji">🔐</span> How Your Data Is Stored</h2>
   <ul>
-    <li>Improve app performance and features</li>
-    <li>Understand user engagement</li>
-    <li>Identify and fix bugs</li>
-    <li>Plan future updates</li>
+    <li><strong>Secure Cloud Storage:</strong> User accounts, premium status, and some user preferences are securely stored in Firebase Authentication and Firestore.</li>
+    <li><strong>Local Storage:</strong> User settings, plate preferences, barbell selections, and documents are stored locally on your device using SharedPreferences.</li>
+    <li><strong>Encrypted Transmission:</strong> All data sent between the app and Firebase is encrypted using HTTPS.</li>
+    <li><strong>Anonymous Session:</strong> Guest users operate under temporary anonymous sessions unless they register an account.</li>
   </ul>
 
-  <h2>3. Third-Party Services</h2>
-  <p>We may use third-party services such as analytics or ad networks that collect and analyze usage data. These services are configured to not collect personal information and are used strictly to help us improve app functionality and performance.</p>
+  <h2><span class="emoji">🤝</span> Sharing with Third Parties</h2>
+  <p>We only share data with trusted third-party services necessary for app functionality:</p>
+  <ul>
+    <li><strong>Firebase (by Google)</strong><br />
+      • Authentication and user account management<br />
+      • Cloud Firestore (for syncing data like lift records)<br />
+      • Crashlytics (for crash reports and diagnostics)
+    </li>
+    <li><strong>Google AdMob</strong><br />
+      • Used to serve non-personalized banner ads in the free and mid-tier versions of the app<br />
+      • No sensitive personal information is shared<br />
+      • Premium users do not see ads and are not tracked for advertising
+    </li>
+  </ul>
+  <p><strong>We do not sell your data to any third party.</strong></p>
 
-  <h2>4. Data Security</h2>
-  <p>All usage data is stored securely and used only for internal analysis. No personal data is stored or shared with any third parties.</p>
+  <h2><span class="emoji">🧑‍⚖️</span> Your Rights</h2>
+  <p>As a user of Rack It, you have the right to:</p>
+  <ul>
+    <li>Access your data: View your saved maxes, rack heights, and settings.</li>
+    <li>Modify your data: Change or delete barbell settings, plate inventory, lift stats, and more within the app.</li>
+    <li>Delete your account: Permanently delete your account and associated cloud data upon request.</li>
+    <li>Opt-out of ads: Upgrade to the premium version to remove all ads.</li>
+    <li>Use the app anonymously: Use guest mode without creating a registered account (note: progress may not be saved permanently).</li>
+  </ul>
+  <p>To exercise any of these rights, please contact us at <strong>[Insert contact email]</strong> or use the in-app support channel.</p>
 
-  <h2>5. Your Choices</h2>
-  <p>Since we do not collect personal information, there is no account to delete or data to request. However, if you have any questions or concerns, feel free to contact us.</p>
+  <h2><span class="emoji">📞</span> Contact</h2>
+  <p>If you have any questions or concerns about this Privacy Policy or your data, please contact us:</p>
+  <ul>
+    <li><strong>Email:</strong> [Insert contact email]</li>
+    <li><strong>Discord:</strong> <a href="https://discord.gg/Xx2jXBRCKG" target="_blank">Join our community</a></li>
+    <li><strong>Website:</strong> <a href="https://milestogetherapp.com" target="_blank">https://milestogetherapp.com</a></li>
+  </ul>
 
-  <h2>6. Changes to This Policy</h2>
-  <p>We may update this Privacy Policy from time to time. If we make significant
+  <h2><span class="emoji">🔄</span> Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. We’ll notify you via the app or email if significant changes are made.</p>
+
+</body>
+</html>
