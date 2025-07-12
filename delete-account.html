@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Request Account Deletion</title>
+</head>
+<body>
+  <h2>Request Rack It Account Deletion</h2>
+
+  <form action="https://formsubmit.co/loonsandleaves@gmail.com" method="POST">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username" required><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <!-- CC user -->
+    <input type="hidden" name="_cc" value="{{email}}">
+
+    <!-- Email subject -->
+    <input type="hidden" name="_subject" value="Rack It Account Deletion Request">
+
+    <!-- Redirect on success -->
+    <input type="hidden" name="_next" value="https://loonsandleaves.github.io/delete-confirmed.html">
+
+    <!-- Anti-spam -->
+    <input type="text" name="_honey" style="display:none">
+    <input type="hidden" name="_captcha" value="false">
+
+    <button type="submit">Submit Deletion Request</button>
+  </form>
+</body>
+</html>
