@@ -1,0 +1,13 @@
+{
+  "projects": {
+    "rackit": {
+      "rootDirectory": "Rackit/web"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/rackit(/.*)?",
+      "destination": "/Rackit/web/index.html"
+    }
+  ]
+}
