@@ -4,7 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rack It – Loons & Leaves</title>
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Social Sharing Meta Tags -->
+  <meta property="og:title" content="Rack It – Loons & Leaves">
+  <meta property="og:description" content="A minimalist barbell plate calculator for serious lifters. Built with Flutter for iOS and Android.">
+  <meta property="og:image" content="plate_calculator.png">
+  <meta name="twitter:card" content="summary_large_image">
+
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -61,11 +70,35 @@
     }
 
     .screenshots img {
-      max-width: 100%;
-      width: 250px;
+      width: 100%;
+      max-width: 250px;
+      height: auto;
       border-radius: 8px;
       border: 1px solid #333;
       background: #000;
+    }
+
+    .try-button {
+      text-align: center;
+      margin-top: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .try-button a {
+      background-color: #58a6ff;
+      color: #111;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .try-button a:hover {
+      background-color: #1f6feb;
+      color: #fff;
     }
 
     .footer {
@@ -105,20 +138,26 @@
     </p>
 
     <div class="screenshots">
-      <img src="plate_calculator.png" alt="Plate Calculator">
-      <img src="plate_visualizer.png" alt="Plate Visualizer">
-      <img src="plate_themes.png" alt="Plate Themes">
-      <img src="settings_screen.png" alt="Settings Screen">
-      <img src="more_screen.png" alt="More Screen">
+      <img src="plate_calculator.png" alt="Rack It - Plate Calculator screen">
+      <img src="plate_visualizer.png" alt="Rack It - Plate Visualizer screen">
+      <img src="plate_themes.png" alt="Rack It - Plate Themes options">
+      <img src="settings_screen.png" alt="Rack It - Settings screen">
+      <img src="more_screen.png" alt="Rack It - More screen options">
+    </div>
+
+    <div class="try-button">
+      <a href="https://your-rack-it-web-app-url.com" target="_blank" rel="noopener">
+        Try It Out
+      </a>
     </div>
 
     <div class="footer">
-  <p>
-    <a href="privacy.html">Privacy Policy</a> • 
-    <a href="delete-account.html">Request Account Deletion</a>
-  </p>
-</div>
-`
+      <p>
+        <a href="privacy.html">Privacy Policy</a> • 
+        <a href="delete-account.html">Request Account Deletion</a>
+      </p>
+    </div>
+
   </main>
 
 </body>
