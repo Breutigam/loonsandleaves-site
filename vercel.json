@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/rackit/app",
+      "destination": "/Rackit/web/index.html"
+    },
+    {
+      "source": "/rackit/app/(.*)",
+      "destination": "/Rackit/web/$1"
+    }
+  ]
+}
