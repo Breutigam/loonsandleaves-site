@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WarFit – Loons & Leaves</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.1rem;
+      margin-top: 1.75rem;
+    }
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.4rem;
+      transition: border-color 0.2s;
+    }
+    .feature-card:hover { border-color: #C8A84B44; }
+    .feature-card .icon { font-size: 1.4rem; margin-bottom: 0.65rem; }
+    .feature-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:600; margin-bottom:0.4rem; color:var(--text); }
+    .feature-card p  { font-size:0.85rem; color:var(--muted); line-height:1.7; }
+
+    .plan-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .plan-row:last-child { border-bottom: none; }
+    .plan-icon { font-size: 1.2rem; flex-shrink:0; width:24px; text-align:center; }
+    .plan-name { font-size: 0.92rem; color: var(--text); font-weight: 400; }
+    .plan-meta { font-size: 0.78rem; color: var(--muted); margin-top: 1px; }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="nav-brand" href="index.html">
+      <img src="loonsandleaves-logo.png" alt="Loons & Leaves" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Mission</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="https://discord.gg/Xx2jXBRCKG" target="_blank" rel="noopener">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrap">
+
+    <!-- HERO -->
+    <section style="padding:6rem 0 3rem; display:flex; align-items:flex-start; gap:2.5rem; flex-wrap:wrap;">
+      <div style="flex-shrink:0; padding-top:0.3rem;">
+        <div style="font-size:5rem; line-height:1;" class="fade-up fade-up-1">⚔️</div>
+      </div>
+      <div style="flex:1; min-width:260px;">
+        <p class="section-label fade-up fade-up-1">iOS &amp; Android</p>
+        <h1 class="display fade-up fade-up-2" style="color:#C8A84B;">WarFit</h1>
+        <p style="margin-top:1.25rem; font-size:1.05rem; color:var(--muted); max-width:540px; line-height:1.8;" class="fade-up fade-up-3">
+          A serious workout tracker for serious athletes. 28+ battle-tested training programmes, full logging, smart insights, and a complete toolbox — built by someone who actually trains.
+        </p>
+        <div style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;" class="fade-up fade-up-4">
+          <a href="projects.html" class="btn btn-outline">← All projects</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <hr class="rule" />
+    <section style="padding-bottom:1rem;">
+      <p class="section-label">Features</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="icon">📋</div>
+          <h3>28+ Programmes</h3>
+          <p>Military selection prep (JTF-2, Navy SEAL PAST), powerlifting, marathon, 5K sub-20, kettlebell, CrossFit/MetCon, swimming, cycling, triathlon, rucking, and more.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">🏆</div>
+          <h3>PR Detection</h3>
+          <p>Automatically flags new personal records the moment you log a heavier lift. No setup needed — it just knows.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">📊</div>
+          <h3>Performance Dashboard</h3>
+          <p>Lift progression charts, run time trends, body weight tracking, activity heatmap, and top PR leaderboard all in one view.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">📋</div>
+          <h3>Weekly Check-Ins</h3>
+          <p>Rate energy, sleep, soreness, motivation, and stress each week. Smart suggestions adapt based on your wellness patterns.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">🔨</div>
+          <h3>Plan Builder</h3>
+          <p>Build completely custom programmes — set your own days, exercises, sets, reps, and notes. Fully integrated into the tracker.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">📸</div>
+          <h3>Progress Photos</h3>
+          <p>Log front, side, and back photos over time. Side-by-side before/after comparison with weight change overlay.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">⏱️</div>
+          <h3>Session Tools</h3>
+          <p>Built-in rest timer, barbell plate calculator, 1RM estimator, and run pace calculator — all accessible mid-workout.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">📐</div>
+          <h3>Body Measurements</h3>
+          <p>Log chest, waist, hips, arms, thighs, and calves over time. Week-over-week delta shown automatically.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">🔁</div>
+          <h3>Plan Runs &amp; Archives</h3>
+          <p>Finish a programme? Archive it and restart with a clean slate. Your full history — lifts, runs, notes — is preserved forever.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMME LIST -->
+    <hr class="rule" />
+    <section style="padding-bottom:4rem;">
+      <p class="section-label">All programmes</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:0 2rem; margin-top:1.75rem;">
+
+        <div>
+          <p style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#C8A84B;margin-bottom:0.6rem;">Military &amp; Tactical</p>
+          <div class="plan-row"><span class="plan-icon">⚔️</span><div><div class="plan-name">JTF-2 Selection Prep — Phase 1</div><div class="plan-meta">12 weeks · Foundation</div></div></div>
+          <div class="plan-row"><span class="plan-icon">⚔️</span><div><div class="plan-name">JTF-2 Selection Prep — Phase 2</div><div class="plan-meta">12 weeks · Build</div></div></div>
+          <div class="plan-row"><span class="plan-icon">⚔️</span><div><div class="plan-name">JTF-2 Selection Prep — Phase 3</div><div class="plan-meta">12 weeks · Intensify</div></div></div>
+          <div class="plan-row"><span class="plan-icon">⚔️</span><div><div class="plan-name">JTF-2 Selection Prep — Phase 4</div><div class="plan-meta">12 weeks · Sharpen &amp; Taper</div></div></div>
+          <div class="plan-row"><span class="plan-icon">⚓</span><div><div class="plan-name">Navy SEAL / SF PAST Prep</div><div class="plan-meta">12 weeks · Selection prep</div></div></div>
+          <div class="plan-row"><span class="plan-icon">🎒</span><div><div class="plan-name">Ruck Training</div><div class="plan-meta">12 weeks · Loaded carry build</div></div></div>
+        </div>
+
+        <div>
+          <p style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#C8A84B;margin-bottom:0.6rem;">Strength &amp; Powerlifting</p>
+          <div class="plan-row"><span class="plan-icon">🏋️</span><div><div class="plan-name">StrongLifts 5×5</div><div class="plan-meta">12 weeks · Classic powerbuilding</div></div></div>
+          <div class="plan-row"><span class="plan-icon">💪</span><div><div class="plan-name">Push / Pull / Legs</div><div class="plan-meta">12 weeks · 6-day split</div></div></div>
+          <div class="plan-row"><span class="plan-icon">🎯</span><div><div class="plan-name">Powerlifting Meet Prep</div><div class="plan-meta">16 weeks · Sheiko-inspired</div></div></div>
+          <div class="plan-row"><span class="plan-icon">💪</span><div><div class="plan-name">Wendler 5/3/1</div><div class="plan-meta">16 weeks · Percentage strength</div></div></div>
+          <div class="plan-row"><span class="plan-icon">🏗️</span><div><div class="plan-name">German Volume Training</div><div class="plan-meta">8 weeks · 10×10 hypertrophy</div></div></div>
+          <div class="plan-row"><span class="plan-icon">🥇</span><div><div class="plan-name">Olympic Weightlifting</div><div class="plan-meta">12 weeks · Snatch &amp; C&amp;J intro</div></div></div>
+          <div class="plan-row"><span class="plan-icon">🔔</span><div><div class="plan-name">Kettlebell Program Minimum</div><div class="plan-meta">12 weeks · Pavel-inspired</div></div></div>
+        </div>
+
+        <div>
+          <p style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#C8A84B;margin-bottom:0.6rem;">Running</p>
+          <div class="plan-row"><span class="plan-icon">🏃</span><div><div class="plan-name">Couch to 5K</div><div class="plan-meta">9 weeks · Beginner running</div></div></div>
+          <div class="plan-row"><span class="plan-icon">🏃</span><div><div class="plan-name">5K Training Plan</div><div class="plan-meta">8 weeks · Beginner to finish line</div></div></div>
+          <div class="plan-row"><span class="plan-icon">⚡</span><div><div class="plan-name">5K Sub-20 Programme</div><div class="plan-meta">8 weeks · Speed &amp; VO₂</div></div></div>
+          <div class="plan-row"><span class="plan-icon">🏃</span><div><div class="plan-name">10K Training Plan</div><div class="plan-meta">10 weeks · 5K to 10K</div></div></div>
+          <div class="plan-row"><span class="plan-icon">🏅</span><div><div class="plan-name">Half Marathon</div><div class="plan-meta">12 weeks · 21.1km</div></div></div>
+          <div class="plan-row"><span class="plan-icon">🏆</span><div><div class="plan-name">Marathon</div><div class="plan-meta">18 weeks · 42.2km</div></div></div>
+          <div class="plan-row"><span class="plan-icon">🌄</span><div><div class="plan-name">Ultra Marathon</div><div class="plan-meta">20 weeks · 50K trail</div></div></div>
+        </div>
+
+        <div>
+          <p style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#C8A84B;margin-bottom:0.6rem;">Conditioning &amp; Sport</p>
+          <div class="plan-row"><span class="plan-icon">⚡</span><div><div class="plan-name">MetCon — Foundations</div><div class="plan-meta">16 weeks · Scaled beginner</div></div></div>
+          <div class="plan-row"><span class="plan-icon">🏅</span><div><div class="plan-name">MetCon — Competition Prep</div><div class="plan-meta">16 weeks · Performance cycle</div></div></div>
+          <div class="plan-row"><span class="plan-icon">🔥</span><div><div class="plan-name">HIIT Shred</div><div class="plan-meta">6 weeks · Fat loss &amp; conditioning</div></div></div>
+          <div class="plan-row"><span class="plan-icon">🥊</span><div><div class="plan-name">Combat Sports Conditioning</div><div class="plan-meta">12 weeks · Boxing &amp; MMA fitness</div></div></div>
+          <div class="plan-row"><span class="plan-icon">🏊</span><div><div class="plan-name">Swim Training</div><div class="plan-meta">10 weeks · Beginner to 1.5km</div></div></div>
+          <div class="plan-row"><span class="plan-icon">🚴</span><div><div class="plan-name">Cycling — Century Build</div><div class="plan-meta">12 weeks · Beginner to 100km</div></div></div>
+          <div class="plan-row"><span class="plan-icon">🏁</span><div><div class="plan-name">Triathlon — Sprint</div><div class="plan-meta">12 weeks · 750m/20km/5km</div></div></div>
+        </div>
+
+        <div>
+          <p style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#C8A84B;margin-bottom:0.6rem;">Calisthenics &amp; Recovery</p>
+          <div class="plan-row"><span class="plan-icon">💪</span><div><div class="plan-name">Bodyweight Blast</div><div class="plan-meta">8 weeks · No equipment</div></div></div>
+          <div class="plan-row"><span class="plan-icon">🧘</span><div><div class="plan-name">Mobility &amp; Flow</div><div class="plan-meta">4 weeks · Movement quality</div></div></div>
+          <div class="plan-row"><span class="plan-icon">🖥️</span><div><div class="plan-name">Office Worker Decompression</div><div class="plan-meta">4 weeks · Daily desk reset</div></div></div>
+          <div class="plan-row"><span class="plan-icon">🩹</span><div><div class="plan-name">Hip &amp; IT Band Rehab</div><div class="plan-meta">8 weeks · Runner's knee</div></div></div>
+          <div class="plan-row"><span class="plan-icon">🩹</span><div><div class="plan-name">Plantar Fasciitis Rehab</div><div class="plan-meta">10 weeks · Foot loading protocol</div></div></div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2025 Loons &amp; Leaves. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="projects.html">Projects</a>
+      <a href="https://discord.gg/Xx2jXBRCKG" target="_blank" rel="noopener">Discord</a>
+    </div>
+  </footer>
+
+</body>
+</html>

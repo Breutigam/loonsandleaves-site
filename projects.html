@@ -2,140 +2,392 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects – Loons & Leaves</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #111;
-      color: #eee;
-      margin: 0;
-      padding: 0;
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 400px;
+      transition: border-color 0.3s, box-shadow 0.3s;
     }
-
-    nav {
-      background: #222;
-      padding: 1rem;
-      text-align: center;
+    .project-card:hover {
+      border-color: var(--border-2);
+      box-shadow: 0 0 40px rgba(126,201,138,0.05);
     }
+    .project-card.flip { direction: rtl; }
+    .project-card.flip > * { direction: ltr; }
 
-    nav a {
-      margin: 0 1rem;
-      color: #eee;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    main {
-      padding: 2rem 1rem;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    .project-section {
+    .card-body {
+      padding: 2.75rem 2.75rem 2.25rem;
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-icon {
+      width: 58px; height: 58px;
+      border-radius: 14px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      margin-bottom: 1.6rem;
+    }
+    .card-logo-img {
+      height: 28px; width: auto;
+      margin-bottom: 1.6rem;
+      display: block;
+      opacity: 0.9;
+    }
+    .platform-badge {
+      display: inline-flex;
       align-items: center;
-      gap: 2rem;
-      margin: 3rem 0;
+      gap: 0.4rem;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 20px;
+      padding: 0.28rem 0.8rem;
+      margin-bottom: 0.9rem;
+      border: 1px solid;
+    }
+    .card-body h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+      color: var(--text);
+    }
+    .card-body p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    .card-actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 1.75rem;
     }
 
-    .project-section img {
-      width: 120px;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.05);
+    /* Visual panels */
+    .card-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      gap: 0.75rem;
+      overflow: hidden;
+      position: relative;
+    }
+    .card-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(126,201,138,0.06) 0%, transparent 65%);
+      pointer-events: none;
     }
 
-    .project-info {
-      flex: 1;
-      min-width: 250px;
+    .screen {
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+      object-fit: cover;
+      flex-shrink: 0;
     }
+    .screen.main { width: 130px; height: 265px; }
+    .screen.side { width: 108px; height: 220px; }
 
-    .project-info h3 {
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
+    .brand-visual {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.85rem;
+      text-align: center;
     }
-
-    .project-info p {
-      color: #ccc;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    a {
-      color: #58a6ff;
-      text-decoration: none;
+    .brand-visual .bi { font-size: 3.2rem; line-height: 1; }
+    .brand-visual .bn {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
       font-weight: 600;
     }
-
-    a:hover {
-      text-decoration: underline;
+    .brand-visual .bs {
+      font-size: 0.76rem;
+      letter-spacing: 0.06em;
+      opacity: 0.6;
+      max-width: 170px;
+      line-height: 1.55;
     }
 
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #1a1a1a;
-      color: #888;
-      font-size: 0.9rem;
+    /* Feature grid used in WarFit panel */
+    .feat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      width: 100%;
+      max-width: 210px;
+      margin-top: 0.75rem;
+    }
+    .feat-cell {
+      border-radius: 8px;
+      padding: 8px 10px;
+    }
+    .feat-cell .ft { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.04em; }
+    .feat-cell .fs { font-size: 0.62rem; color: var(--subtle); margin-top: 2px; }
+
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 2.5rem 0 1.5rem;
+    }
+    .section-divider span {
+      font-size: 0.67rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .section-divider::before,
+    .section-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
     }
 
-    @media (max-width: 600px) {
-      .project-section {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+    @media (max-width: 700px) {
+      .project-card,
+      .project-card.flip { grid-template-columns: 1fr; direction: ltr; }
+      .project-card .card-visual { min-height: 220px; order: -1; }
+      .card-body { padding: 2rem 1.5rem; }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="index.html">Mission</a>
-    <a href="projects.html">Projects</a>
-    <a href="about.html">About</a>
-    <a href="https://discord.gg/Xx2jXBRCKG" target="_blank">Contact</a>
+  <nav class="site-nav">
+    <a class="nav-brand" href="index.html">
+      <img src="loonsandleaves-logo.png" alt="Loons & Leaves" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Mission</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="https://discord.gg/Xx2jXBRCKG" target="_blank" rel="noopener">Contact</a></li>
+    </ul>
   </nav>
 
-  <main>
-    <h2>Our Projects</h2>
+  <div class="page-wrap">
 
-    <div class="project-section">
-      <img src="app_icon.png" alt="Rack It App Icon" />
-      <div class="project-info">
-        <h3>Rack It – Smart Plate Calculator</h3>
-        <p>Need to load 275 lbs? Rack It tells you exactly which plates to throw on the barbell — in pounds or kilograms.</p>
-        <p>Includes premium features, plate themes, max tracking, and support for specialty barbells.</p>
-        <p><a href="rackit.html">View Project Details →</a></p>
-      </div>
+    <section style="padding: 6rem 0 3.5rem;">
+      <p class="section-label fade-up fade-up-1">What we're building</p>
+      <h1 class="display fade-up fade-up-2" style="max-width: 580px;">
+        Tools for people who <em>live with purpose</em>
+      </h1>
+      <p style="margin-top: 1.5rem; font-size: 1rem; color: var(--muted); max-width: 480px; line-height: 1.8;" class="fade-up fade-up-3">
+        Apps for athletes, lifters, wellness communities, gardeners, and everyday life. Indie-built in Canada.
+      </p>
+    </section>
+
+    <!-- ─── LIVE NOW ──────────────────────────────────────────────────────── -->
+    <div class="section-divider fade-up fade-up-2">
+      <span>Live now</span>
     </div>
 
-    <div class="project-section">
-      <img src="miles-together-logo.png" alt="Miles Together Logo" />
-      <div class="project-info">
-        <h3>Miles Together – Team Fitness Adventures</h3>
-        <p>Miles Together lets teams track distance and elevation as a group toward fun goals (like crossing Canada or climbing Everest).</p>
-        <p>Built for work wellness challenges, running clubs, and friends who want to stay active together.</p>
-        <p><a href="https://milestogetherapp.com" target="_blank">Visit Miles Together →</a></p>
-      </div>
+    <div style="display: flex; flex-direction: column; gap: 1.75rem;">
+
+      <!-- RACK IT -->
+      <article class="project-card fade-up fade-up-2">
+        <div class="card-body">
+          <div>
+            <img src="app_icon.png" alt="Rack It icon" class="card-icon" />
+            <span class="platform-badge" style="color:var(--accent); border-color:var(--accent-dim); background:var(--accent-glow);">
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+              iOS &amp; Android
+            </span>
+            <h2>Rack It</h2>
+            <p>A minimalist barbell plate calculator for serious lifters. Tell Rack It the weight you need and it shows you exactly which plates to load — in pounds or kilograms, for any barbell.</p>
+            <p style="margin-top:0.65rem;">Includes plate themes, max tracking, premium features, and specialty barbell support.</p>
+            <div class="tags">
+              <span class="tag">Flutter</span><span class="tag">Plate themes</span>
+              <span class="tag">Max tracking</span><span class="tag">lbs &amp; kg</span>
+              <span class="tag">Specialty bars</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a href="rackit.html" class="btn btn-outline">Project details<svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+            <a href="RackitWeb/" class="btn btn-primary">Try it now<svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+          </div>
+        </div>
+        <div class="card-visual" style="background:#0f1a12;">
+          <img src="plate_calculator.png" alt="Plate calculator" class="screen main" />
+          <img src="plate_visualizer.png" alt="Plate visualizer" class="screen side" />
+        </div>
+      </article>
+
+      <!-- MILES TOGETHER -->
+      <article class="project-card flip fade-up fade-up-3">
+        <div class="card-body">
+          <div>
+            <img src="miles-together-logo.png" alt="Miles Together" class="card-logo-img" />
+            <span class="platform-badge" style="color:#4B9EC8; border-color:rgba(75,158,200,0.3); background:rgba(75,158,200,0.08);">
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Team &amp; Community
+            </span>
+            <h2>Miles Together</h2>
+            <p>Teams track distance and elevation as a group toward shared goals — crossing Canada, climbing Everest, walking to the moon.</p>
+            <p style="margin-top:0.65rem;">Built for workplace wellness challenges, running clubs, and friends who keep each other accountable.</p>
+            <div class="tags">
+              <span class="tag">Group challenges</span><span class="tag">Distance tracking</span>
+              <span class="tag">Elevation goals</span><span class="tag">Leaderboards</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a href="https://milestogetherapp.com" target="_blank" rel="noopener" class="btn btn-primary" style="background:#4B9EC8; color:#0d0d0b;">
+              Visit Miles Together<svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="card-visual" style="background:#0c1220; flex-direction:column; gap:1rem;">
+          <div class="brand-visual">
+            <img src="miles-together-logo.png" alt="Miles Together" style="width:190px; opacity:0.88;" />
+            <p class="bs" style="color:#4B9EC8;">Move together. Go further.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- SPROUT & BLOOM -->
+      <article class="project-card fade-up fade-up-2">
+        <div class="card-body">
+          <div>
+            <div style="font-size:2.8rem; line-height:1; margin-bottom:1.6rem;">🌱</div>
+            <span class="platform-badge" style="color:#6bbf59; border-color:rgba(107,191,89,0.3); background:rgba(107,191,89,0.08);">
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+              Web App
+            </span>
+            <h2>Sprout &amp; Bloom</h2>
+            <p>A thoughtfully designed web app for plant lovers. Track your garden, log care routines, and watch everything flourish — one sprout at a time.</p>
+            <div class="tags">
+              <span class="tag">Plant care</span><span class="tag">Garden tracker</span><span class="tag">React</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a href="https://sproutnbloom.com" target="_blank" rel="noopener" class="btn btn-primary" style="background:#6bbf59; color:#0a1a08;">
+              Visit Sprout &amp; Bloom<svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="card-visual" style="background:#0e1a0c; flex-direction:column; gap:1rem;">
+          <div class="brand-visual">
+            <div class="bi">🌿</div>
+            <p class="bn" style="color:#6bbf59;">Sprout &amp; Bloom</p>
+            <p class="bs" style="color:#6bbf59;">Grow something beautiful.</p>
+          </div>
+        </div>
+      </article>
+
     </div>
 
-  </main>
+    <!-- ─── MOBILE APPS ────────────────────────────────────────────────────── -->
+    <div class="section-divider" style="margin-top:2.5rem;">
+      <span>Mobile apps</span>
+    </div>
 
-  <footer>
-    &copy; 2025 Loons & Leaves. All rights reserved.
+    <div style="display:flex; flex-direction:column; gap:1.75rem;">
+
+      <!-- WARFIT -->
+      <article class="project-card flip fade-up fade-up-3">
+        <div class="card-body">
+          <div>
+            <div style="font-size:2.8rem; line-height:1; margin-bottom:1.6rem;">⚔️</div>
+            <span class="platform-badge" style="color:#C8A84B; border-color:rgba(200,168,75,0.3); background:rgba(200,168,75,0.08);">
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+              iOS &amp; Android
+            </span>
+            <h2>WarFit</h2>
+            <p>A serious workout tracker for serious athletes. WarFit packs an entire training ecosystem into one app — 28+ curated programmes spanning military selection prep, powerlifting, marathon training, kettlebell, MetCon, and more.</p>
+            <p style="margin-top:0.65rem;">Smart suggestions, weekly check-ins, PR tracking, body measurements, progress photos, rest timer, plate calculator, and a full custom plan builder.</p>
+            <div class="tags">
+              <span class="tag">28+ programmes</span><span class="tag">Military / JTF-2</span>
+              <span class="tag">PR tracking</span><span class="tag">Plan builder</span>
+              <span class="tag">Progress photos</span><span class="tag">Plate calculator</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a href="warfit.html" class="btn btn-outline" style="border-color:rgba(200,168,75,0.5); color:#C8A84B;">
+              Learn more<svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="card-visual" style="background:#141008; flex-direction:column; gap:1rem;">
+          <div class="brand-visual">
+            <div class="bi">⚔️</div>
+            <p class="bn" style="color:#C8A84B;">WarFit Tracker</p>
+            <p class="bs" style="color:#C8A84B;">Train hard. Track everything.</p>
+          </div>
+          <div class="feat-grid">
+            <div class="feat-cell" style="background:rgba(200,168,75,0.1); border:1px solid rgba(200,168,75,0.2);">
+              <div class="ft" style="color:#C8A84B;">28+ Plans</div><div class="fs">All disciplines</div>
+            </div>
+            <div class="feat-cell" style="background:rgba(200,168,75,0.1); border:1px solid rgba(200,168,75,0.2);">
+              <div class="ft" style="color:#C8A84B;">PR Tracking</div><div class="fs">Auto-detected</div>
+            </div>
+            <div class="feat-cell" style="background:rgba(200,168,75,0.1); border:1px solid rgba(200,168,75,0.2);">
+              <div class="ft" style="color:#C8A84B;">Check-ins</div><div class="fs">Weekly wellness</div>
+            </div>
+            <div class="feat-cell" style="background:rgba(200,168,75,0.1); border:1px solid rgba(200,168,75,0.2);">
+              <div class="ft" style="color:#C8A84B;">Plan Builder</div><div class="fs">Build your own</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- PICKLE & DOG LOG -->
+      <article class="project-card fade-up fade-up-4">
+        <div class="card-body">
+          <div>
+            <div style="font-size:2.8rem; line-height:1; margin-bottom:1.6rem;">🥒🐾</div>
+            <span class="platform-badge" style="color:#E89050; border-color:rgba(232,144,80,0.3); background:rgba(232,144,80,0.08);">
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+              iOS · Coming soon
+            </span>
+            <h2>Pickle &amp; Dog Log</h2>
+            <p>A new addition to the Loons &amp; Leaves family. More details coming soon.</p>
+            <div class="tags" style="margin-top:1rem;"><span class="tag">In development</span></div>
+          </div>
+          <div class="card-actions">
+            <a href="privacy-policy-pickle-dog-log.html" class="btn btn-outline" style="border-color:rgba(232,144,80,0.4); color:#E89050;">
+              Privacy policy
+            </a>
+          </div>
+        </div>
+        <div class="card-visual" style="background:#1a0f08; flex-direction:column; gap:1rem;">
+          <div class="brand-visual">
+            <div class="bi">🥒🐾</div>
+            <p class="bn" style="color:#E89050;">Pickle &amp; Dog Log</p>
+            <p class="bs" style="color:#E89050;">Coming soon.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div style="height:3rem;"></div>
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2025 Loons &amp; Leaves. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy</a>
+      <a href="https://discord.gg/Xx2jXBRCKG" target="_blank" rel="noopener">Discord</a>
+    </div>
   </footer>
 
 </body>

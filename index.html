@@ -2,75 +2,103 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mission – Loons & Leaves</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #111;
-      color: #eee;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav {
-      background: #222;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    nav a {
-      margin: 0 1rem;
-      color: #eee;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    main {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-    }
-
-    img.logo {
-      max-width: 150px;
-      margin-bottom: 2rem;
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #ccc;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <nav>
-    <a href="index.html">Mission</a>
-    <a href="projects.html">Projects</a>
-    <a href="about.html">About</a>
-    <a href="https://discord.gg/Xx2jXBRCKG" target="_blank">Contact</a>
+  <nav class="site-nav">
+    <a class="nav-brand" href="index.html">
+      <img src="loonsandleaves-logo.png" alt="Loons & Leaves" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Mission</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="https://discord.gg/Xx2jXBRCKG" target="_blank" rel="noopener">Contact</a></li>
+    </ul>
   </nav>
 
-  <main>
-    <img src="loonsandleaves-logo.png" alt="Loons & Leaves Logo" class="logo" />
+  <div class="page-wrap">
 
-    <h2>Our Mission</h2>
-    <p>Loons & Leaves builds smart tools for serious lifters and wellness communities.</p>
-    <p>We believe movement is medicine, and good design helps people move with purpose.</p>
-  </main>
+    <!-- HERO -->
+    <section style="padding: 7rem 0 5rem; max-width: 680px;">
+      <p class="section-label fade-up fade-up-1">Our mission</p>
+      <h1 class="display fade-up fade-up-2">
+        Movement is medicine.<br /><em>Design makes it move.</em>
+      </h1>
+      <p style="margin-top: 1.75rem; font-size: 1.05rem; color: var(--muted); max-width: 500px; line-height: 1.8;" class="fade-up fade-up-3">
+        Loons &amp; Leaves builds smart tools for serious lifters and wellness communities. We believe good design helps people move with purpose — and stick with it.
+      </p>
+      <div style="margin-top: 2.25rem; display: flex; gap: 1rem; flex-wrap: wrap;" class="fade-up fade-up-4">
+        <a href="projects.html" class="btn btn-primary">
+          See our projects
+          <svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+        <a href="about.html" class="btn btn-outline">About us</a>
+      </div>
+    </section>
+
+    <hr class="rule" />
+
+    <!-- VALUES -->
+    <section style="padding-bottom: 2rem;">
+      <p class="section-label">What we stand for</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+
+        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.75rem;">
+          <div style="font-size: 1.4rem; margin-bottom: 0.75rem;">🏋️</div>
+          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">Built for athletes</h3>
+          <p style="font-size: 0.9rem; color: var(--muted); line-height: 1.7;">Tools designed by people who train — with the precision and speed serious lifters actually need.</p>
+        </div>
+
+        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.75rem;">
+          <div style="font-size: 1.4rem; margin-bottom: 0.75rem;">🌿</div>
+          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">Wellness, together</h3>
+          <p style="font-size: 0.9rem; color: var(--muted); line-height: 1.7;">Fitness is better with others. We build experiences that bring communities along for the journey.</p>
+        </div>
+
+        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.75rem;">
+          <div style="font-size: 1.4rem; margin-bottom: 0.75rem;">✦</div>
+          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">Obsessive craft</h3>
+          <p style="font-size: 0.9rem; color: var(--muted); line-height: 1.7;">Every screen, interaction, and feature is considered. Good design isn't decoration — it's respect for the user's time.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS TEASER -->
+    <hr class="rule" />
+    <section style="padding-bottom: 4rem;">
+      <p class="section-label">Currently live</p>
+      <div style="display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 2rem; align-items: center;">
+        <a href="rackit.html" style="display:flex; align-items:center; gap:1rem; padding:1rem 1.5rem; background:var(--bg-card); border:1px solid var(--border); border-radius:12px; text-decoration:none; color:var(--text); transition: border-color 0.2s, transform 0.2s;" onmouseover="this.style.borderColor='var(--accent)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)'">
+          <img src="app_icon.png" alt="Rack It" style="width:44px;height:44px;border-radius:10px;border:1px solid var(--border);" />
+          <div>
+            <p style="font-weight:500; font-size:0.95rem;">Rack It</p>
+            <p style="font-size:0.8rem; color:var(--muted);">Barbell plate calculator</p>
+          </div>
+        </a>
+        <a href="https://milestogetherapp.com" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:1rem; padding:1rem 1.5rem; background:var(--bg-card); border:1px solid var(--border); border-radius:12px; text-decoration:none; color:var(--text); transition: border-color 0.2s, transform 0.2s;" onmouseover="this.style.borderColor='var(--accent)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)'">
+          <img src="miles-together-logo.png" alt="Miles Together" style="width:44px;height:44px;border-radius:10px;object-fit:contain;border:1px solid var(--border);" />
+          <div>
+            <p style="font-weight:500; font-size:0.95rem;">Miles Together</p>
+            <p style="font-size:0.8rem; color:var(--muted);">Team fitness adventures</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2025 Loons &amp; Leaves. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy</a>
+      <a href="https://discord.gg/Xx2jXBRCKG" target="_blank" rel="noopener">Discord</a>
+    </div>
+  </footer>
 
 </body>
 </html>

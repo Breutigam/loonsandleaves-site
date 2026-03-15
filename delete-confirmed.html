@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Request Received</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request Received – Rack It</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h2>✅ Account Deletion Request Received</h2>
-  <p>Your Rack It account will be deleted within <strong>7 days</strong>.</p>
-  <p>A confirmation email has been sent. If this was a mistake, contact us at <a href="mailto:loonsandleaves@gmail.com">loonsandleaves@gmail.com</a>.</p>
+
+  <nav class="site-nav">
+    <a class="nav-brand" href="index.html">
+      <img src="loonsandleaves-logo.png" alt="Loons & Leaves" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Mission</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="https://discord.gg/Xx2jXBRCKG" target="_blank" rel="noopener">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrap">
+    <section style="padding:7rem 0 5rem; max-width:540px; text-align:center; margin:0 auto;">
+      <div style="width:64px;height:64px;border-radius:50%;background:var(--accent-glow);border:1px solid var(--accent-dim);display:flex;align-items:center;justify-content:center;margin:0 auto 2rem;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h1 class="display" style="font-size:2.2rem;">Request received</h1>
+      <p style="margin-top:1.25rem;font-size:1rem;color:var(--muted);line-height:1.8;">
+        Your Rack It account will be deleted within <strong style="color:var(--text);">7 days</strong>. A confirmation email has been sent to you.
+      </p>
+      <p style="margin-top:0.75rem;font-size:0.9rem;color:var(--muted);">
+        If this was a mistake, contact us at <a href="mailto:loonsandleaves@gmail.com" style="color:var(--accent);text-decoration:none;">loonsandleaves@gmail.com</a>
+      </p>
+      <div style="margin-top:2.5rem;">
+        <a href="index.html" class="btn btn-outline">← Back to home</a>
+      </div>
+    </section>
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2025 Loons &amp; Leaves. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>

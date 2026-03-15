@@ -2,164 +2,128 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rack It – Loons & Leaves</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
-  <!-- Social Sharing Meta Tags -->
-  <meta property="og:title" content="Rack It – Loons & Leaves">
-  <meta property="og:description" content="A minimalist barbell plate calculator for serious lifters. Built with Flutter for iOS and Android.">
-  <meta property="og:image" content="plate_calculator.png">
-  <meta name="twitter:card" content="summary_large_image">
-
+  <meta property="og:title" content="Rack It – Loons & Leaves" />
+  <meta property="og:description" content="A minimalist barbell plate calculator for serious lifters. Built with Flutter for iOS and Android." />
+  <meta property="og:image" content="plate_calculator.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #111;
-      color: #eee;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav {
-      background: #222;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    nav a {
-      margin: 0 1rem;
-      color: #eee;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    main {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    h1 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    p {
-      font-size: 1.1rem;
-      color: #ccc;
-      line-height: 1.6;
-      text-align: center;
-      max-width: 700px;
-      margin: auto;
-    }
-
-    .screenshots {
-      margin-top: 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+    .screenshots-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
       gap: 1rem;
-    }
-
-    .screenshots img {
-      width: 100%;
-      max-width: 250px;
-      height: auto;
-      border-radius: 8px;
-      border: 1px solid #333;
-      background: #000;
-    }
-
-    .try-button {
-      text-align: center;
-      margin-top: 2.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .try-button a {
-      background-color: #58a6ff;
-      color: #111;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      font-weight: 600;
-      border: none;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .try-button a:hover {
-      background-color: #1f6feb;
-      color: #fff;
-    }
-
-    .footer {
       margin-top: 3rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #555;
     }
-
-    .footer a {
-      color: #58a6ff;
-      text-decoration: none;
+    .screenshots-grid img {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--bg-2);
+      display: block;
+      transition: transform 0.25s, border-color 0.25s;
     }
-
-    .footer a:hover {
-      text-decoration: underline;
+    .screenshots-grid img:hover {
+      transform: translateY(-4px) scale(1.02);
+      border-color: var(--border-2);
+    }
+    @media (max-width: 700px) {
+      .screenshots-grid { grid-template-columns: repeat(2, 1fr); }
+      .screenshots-grid img:last-child { grid-column: 1 / -1; max-width: 200px; margin: 0 auto; }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="index.html">Mission</a>
-    <a href="projects.html">Projects</a>
-    <a href="about.html">About</a>
-    <a href="https://discord.gg/Xx2jXBRCKG" target="_blank">Contact</a>
+  <nav class="site-nav">
+    <a class="nav-brand" href="index.html">
+      <img src="loonsandleaves-logo.png" alt="Loons & Leaves" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Mission</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="https://discord.gg/Xx2jXBRCKG" target="_blank" rel="noopener">Contact</a></li>
+    </ul>
   </nav>
 
-  <main>
-    <h1>Rack It</h1>
-    <p>
-      Rack It is a minimalist barbell plate calculator for serious lifters. 
-      Quickly calculate how to load your barbell with your available plates.
-    </p>
-    <p>
-      Built with Flutter for iOS and Android. Designed for speed, simplicity, and powerlifters who train hard.
-    </p>
+  <div class="page-wrap">
 
-    <div class="screenshots">
-      <img src="plate_calculator.png" alt="Rack It - Plate Calculator screen">
-      <img src="plate_visualizer.png" alt="Rack It - Plate Visualizer screen">
-      <img src="plate_themes.png" alt="Rack It - Plate Themes options">
-      <img src="settings_screen.png" alt="Rack It - Settings screen">
-      <img src="more_screen.png" alt="Rack It - More screen options">
+    <!-- HERO -->
+    <section style="padding: 6rem 0 3rem; display:flex; align-items:flex-start; gap:2.5rem; flex-wrap:wrap;">
+      <div style="flex-shrink:0; padding-top:0.25rem;">
+        <img src="app_icon.png" alt="Rack It" style="width:80px;height:80px;border-radius:20px;border:1px solid var(--border);" class="fade-up fade-up-1" />
+      </div>
+      <div style="flex:1; min-width:260px;">
+        <p class="section-label fade-up fade-up-1">iOS &amp; Android</p>
+        <h1 class="display fade-up fade-up-2">Rack It</h1>
+        <p style="margin-top:1.25rem; font-size:1.05rem; color:var(--muted); max-width:520px; line-height:1.8;" class="fade-up fade-up-3">
+          A minimalist barbell plate calculator for serious lifters. Tell Rack It the weight you need and it tells you exactly which plates to load — fast, precise, and beautiful.
+        </p>
+        <p style="margin-top:0.75rem; font-size:0.93rem; color:var(--muted); max-width:500px; line-height:1.8;" class="fade-up fade-up-4">
+          Built with Flutter for iOS and Android. Designed for speed, simplicity, and powerlifters who train hard.
+        </p>
+        <div style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;" class="fade-up fade-up-4">
+          <a href="RackitWeb/" class="btn btn-primary">
+            Try Rack It in browser
+            <svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+          <a href="projects.html" class="btn btn-outline">← All projects</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <hr class="rule" />
+    <section style="padding-bottom:1rem;">
+      <p class="section-label">Features</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:1.25rem; margin-top:1.75rem;">
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.4rem;">
+          <p style="font-weight:500;margin-bottom:0.4rem;">Plate calculator</p>
+          <p style="font-size:0.85rem;color:var(--muted);line-height:1.7;">Enter your target weight, get exact plates for each side instantly.</p>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.4rem;">
+          <p style="font-weight:500;margin-bottom:0.4rem;">lbs &amp; kg</p>
+          <p style="font-size:0.85rem;color:var(--muted);line-height:1.7;">Full support for both unit systems, with easy switching.</p>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.4rem;">
+          <p style="font-weight:500;margin-bottom:0.4rem;">Plate themes</p>
+          <p style="font-size:0.85rem;color:var(--muted);line-height:1.7;">Color-coded plate visualizer with multiple theme options.</p>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.4rem;">
+          <p style="font-weight:500;margin-bottom:0.4rem;">Max tracking</p>
+          <p style="font-size:0.85rem;color:var(--muted);line-height:1.7;">Track your 1RM and personal records over time.</p>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.4rem;">
+          <p style="font-weight:500;margin-bottom:0.4rem;">Specialty barbells</p>
+          <p style="font-size:0.85rem;color:var(--muted);line-height:1.7;">EZ bar, hex bar, safety squat bar, and more.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREENSHOTS -->
+    <hr class="rule" />
+    <section style="padding-bottom:5rem;">
+      <p class="section-label">Screenshots</p>
+      <div class="screenshots-grid">
+        <img src="plate_calculator.png" alt="Plate Calculator" />
+        <img src="plate_visualizer.png" alt="Plate Visualizer" />
+        <img src="plate_themes.png" alt="Plate Themes" />
+        <img src="settings_screen.png" alt="Settings" />
+        <img src="more_screen.png" alt="More Options" />
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2025 Loons &amp; Leaves. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="delete-account.html">Delete Account</a>
     </div>
-
-    <div class="try-button">
-  <a href="https://loonsandleaves.com/RackitWeb/" target="_blank" rel="noopener">
-  Try Rack It Now
-</a>
-</div>
-
-
-    <div class="footer">
-      <p>
-        <a href="privacy.html">Privacy Policy</a> • 
-        <a href="delete-account.html">Request Account Deletion</a>
-      </p>
-    </div>
-
-  </main>
+  </footer>
 
 </body>
 </html>
