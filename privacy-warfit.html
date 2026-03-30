@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – WARFIT | Loons & Leaves</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Policy-specific styles ── */
+    .policy-hero {
+      padding: 6rem 0 3.5rem;
+      max-width: 680px;
+    }
+
+    .app-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.45rem 0.85rem 0.45rem 0.45rem;
+      margin-bottom: 2rem;
+      text-decoration: none;
+    }
+    .app-badge-icon {
+      width: 28px; height: 28px;
+      background: var(--bg-3);
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--gold);
+      font-family: 'Cormorant Garamond', serif;
+    }
+    .app-badge span {
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+    .app-badge strong {
+      font-size: 0.75rem;
+      color: var(--text);
+      font-weight: 500;
+      margin-right: 0.25rem;
+    }
+
+    .meta-row {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      padding: 1rem 1.25rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 3rem;
+    }
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .meta-item label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .meta-item span {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* TOC */
+    .toc {
+      padding: 1.5rem;
+      border-left: 2px solid var(--accent-dim);
+      background: var(--accent-glow);
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 3.5rem;
+    }
+    .toc .section-label { margin-bottom: 0.9rem; }
+    .toc ol { list-style: none; counter-reset: toc-c; }
+    .toc li {
+      counter-increment: toc-c;
+      font-size: 0.84rem;
+      padding: 0.25rem 0;
+    }
+    .toc li::before {
+      content: counter(toc-c) ". ";
+      color: var(--accent-dim);
+      font-weight: 500;
+    }
+    .toc a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .toc a:hover { color: var(--accent); }
+
+    /* Sections */
+    .policy-section {
+      margin-bottom: 3.5rem;
+    }
+    .policy-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 1.1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+    }
+    .policy-section h2 .num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+    .policy-section p {
+      font-size: 0.93rem;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+      line-height: 1.75;
+    }
+    .policy-section p strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+    .policy-section ul {
+      list-style: none;
+      margin: 0.5rem 0 1rem;
+    }
+    .policy-section ul li {
+      font-size: 0.9rem;
+      color: var(--muted);
+      padding: 0.3rem 0 0.3rem 1.25rem;
+      position: relative;
+      line-height: 1.7;
+    }
+    .policy-section ul li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--accent-dim);
+    }
+
+    .callout {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 2px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      font-size: 0.87rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .callout strong { color: var(--gold); font-weight: 500; }
+
+    .contact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-top: 1rem;
+    }
+    .contact-card p { margin-bottom: 0.4rem; }
+    .contact-card a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+    .contact-card a:hover { color: #93d49e; }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      color: var(--subtle);
+      padding: 1.5rem 0 0;
+    }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb span { color: var(--subtle); }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a class="nav-brand" href="index.html">
+      <img src="loonsandleaves-logo.png" alt="Loons & Leaves" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Mission</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="https://discord.gg/Xx2jXBRCKG" target="_blank" rel="noopener">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrap">
+
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="projects.html">Projects</a>
+      <span>›</span>
+      <span>WARFIT Privacy Policy</span>
+    </div>
+
+    <div class="policy-hero">
+      <div class="app-badge">
+        <div class="app-badge-icon">WF</div>
+        <div><strong>WARFIT</strong><span>com.warfit.app · Android</span></div>
+      </div>
+      <p class="section-label fade-up fade-up-1">Legal</p>
+      <h1 class="display fade-up fade-up-2">Privacy Policy</h1>
+      <p style="margin-top: 1.5rem; font-size: 1rem; color: var(--muted); line-height: 1.8;" class="fade-up fade-up-3">
+        WARFIT is built with privacy in mind. This policy explains exactly what data is collected, how it's used, and your rights as a user.
+      </p>
+    </div>
+
+    <div class="meta-row fade-up fade-up-4">
+      <div class="meta-item">
+        <label>Effective Date</label>
+        <span>March 29, 2026</span>
+      </div>
+      <div class="meta-item">
+        <label>Last Updated</label>
+        <span>March 29, 2026</span>
+      </div>
+      <div class="meta-item">
+        <label>App</label>
+        <span>WARFIT</span>
+      </div>
+      <div class="meta-item">
+        <label>Platform</label>
+        <span>Android (Google Play)</span>
+      </div>
+      <div class="meta-item">
+        <label>Developer</label>
+        <span>Loons &amp; Leaves</span>
+      </div>
+    </div>
+
+    <nav class="toc">
+      <p class="section-label">Contents</p>
+      <ol>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#information">Information We Collect</a></li>
+        <li><a href="#use">How We Use Your Information</a></li>
+        <li><a href="#sharing">Sharing of Information</a></li>
+        <li><a href="#storage">Data Storage &amp; Security</a></li>
+        <li><a href="#retention">Data Retention</a></li>
+        <li><a href="#rights">Your Rights &amp; Choices</a></li>
+        <li><a href="#children">Children's Privacy</a></li>
+        <li><a href="#changes">Changes to This Policy</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ol>
+    </nav>
+
+    <!-- I -->
+    <section class="policy-section" id="overview">
+      <h2><span class="num">01</span> Overview</h2>
+      <p>WARFIT ("we," "our," or "us") is a military and tactical fitness tracker developed by Loons &amp; Leaves for Android. We are committed to protecting your privacy and handling your personal information with care and transparency.</p>
+      <p>This Privacy Policy explains what information WARFIT collects, how it is used, and the choices available to you. By downloading and using WARFIT, you agree to the practices described here.</p>
+      <div class="callout"><strong>Privacy-first design.</strong> WARFIT stores your data locally on your device. The app does not require an account to use any core feature.</div>
+    </section>
+
+    <!-- II -->
+    <section class="policy-section" id="information">
+      <h2><span class="num">02</span> Information We Collect</h2>
+      <p>WARFIT collects only the minimum data necessary to provide you with a functional fitness tracking experience.</p>
+
+      <p><strong>Information you provide directly</strong></p>
+      <ul>
+        <li>Workout logs including exercises, sets, reps, and weights</li>
+        <li>Personal fitness goals and training program selections</li>
+        <li>Optional display name or preferences set within the app</li>
+      </ul>
+
+      <p><strong>Information collected automatically</strong></p>
+      <ul>
+        <li>App crash reports and error logs (used solely for debugging)</li>
+        <li>Basic device info such as OS version and screen size (for compatibility)</li>
+        <li>Anonymous app usage analytics, only if you opt in</li>
+      </ul>
+
+      <p><strong>Information we do NOT collect</strong></p>
+      <ul>
+        <li>Your name, email address, or contact details — no account is required</li>
+        <li>Location or GPS data</li>
+        <li>Camera, microphone, or media library access</li>
+        <li>Payment or financial information</li>
+        <li>Health records beyond the workout data you manually enter</li>
+      </ul>
+    </section>
+
+    <!-- III -->
+    <section class="policy-section" id="use">
+      <h2><span class="num">03</span> How We Use Your Information</h2>
+      <p>We use information collected for the following purposes only:</p>
+      <ul>
+        <li>To provide core app functionality — tracking workouts, displaying training plans, and calculating progressive overload suggestions</li>
+        <li>To remember your preferences and workout history across sessions</li>
+        <li>To identify and resolve technical issues through crash and error reporting</li>
+        <li>To improve the app based on aggregated, anonymized usage patterns (only with your consent)</li>
+      </ul>
+      <p>We do not use your data for advertising, profiling, or any purpose unrelated to the app's fitness functionality.</p>
+    </section>
+
+    <!-- IV -->
+    <section class="policy-section" id="sharing">
+      <h2><span class="num">04</span> Sharing of Information</h2>
+      <p>We do not sell, rent, or trade your personal information to any third party.</p>
+      <p>We may share limited, anonymized data with the following service providers only as necessary to operate the app:</p>
+      <ul>
+        <li><strong>Crash reporting services</strong> — to diagnose and resolve technical issues</li>
+        <li><strong>Analytics providers</strong> — only aggregate, non-identifiable usage data, and only if you have opted in</li>
+      </ul>
+      <p>Any third-party providers are contractually bound to use your data only for the specific purpose of providing services to WARFIT and are prohibited from using it for their own ends.</p>
+      <p>We may disclose information if required by law, court order, or to protect the rights, safety, or property of Loons &amp; Leaves or WARFIT users.</p>
+    </section>
+
+    <!-- V -->
+    <section class="policy-section" id="storage">
+      <h2><span class="num">05</span> Data Storage &amp; Security</h2>
+      <p>Your workout data and app preferences are stored locally on your Android device. We do not operate servers that store your personal fitness data in the cloud.</p>
+      <p>Where data is transmitted — such as for crash reporting — we use industry-standard encryption (TLS/HTTPS). No method of electronic transmission is 100% secure; we encourage you to use a device passcode to protect your device.</p>
+      <div class="callout"><strong>Note:</strong> Because data is stored locally, uninstalling WARFIT will permanently remove all workout history and settings from your device.</div>
+    </section>
+
+    <!-- VI -->
+    <section class="policy-section" id="retention">
+      <h2><span class="num">06</span> Data Retention</h2>
+      <p>Your locally-stored data is retained on your device until you uninstall the app or clear app data through your Android device settings.</p>
+      <p>Crash reports and anonymized analytics data, if collected, are retained for a maximum of 12 months and then permanently deleted.</p>
+    </section>
+
+    <!-- VII -->
+    <section class="policy-section" id="rights">
+      <h2><span class="num">07</span> Your Rights &amp; Choices</h2>
+      <p>You have the following rights regarding your data:</p>
+      <ul>
+        <li><strong>Access &amp; portability</strong> — your workout data is always accessible to you within the app and on your device</li>
+        <li><strong>Deletion</strong> — delete individual entries within the app, or remove all app data via Android Settings → Apps → WARFIT → Clear Data</li>
+        <li><strong>Analytics opt-out</strong> — opt out of anonymous usage analytics at any time via the app's Settings menu</li>
+        <li><strong>Correction</strong> — edit or correct any workout entries directly within the app</li>
+      </ul>
+      <p>If you are a resident of the EEA, California, or another jurisdiction with specific privacy rights, you may have additional rights under applicable law. Please contact us to exercise these rights.</p>
+    </section>
+
+    <!-- VIII -->
+    <section class="policy-section" id="children">
+      <h2><span class="num">08</span> Children's Privacy</h2>
+      <p>WARFIT is not directed to children under the age of 13 (or 16 in the EEA). We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us and we will promptly delete it.</p>
+    </section>
+
+    <!-- IX -->
+    <section class="policy-section" id="changes">
+      <h2><span class="num">09</span> Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices, app features, or applicable law. When material changes are made, we will update the "Last Updated" date at the top of this page and, where appropriate, provide an in-app notification.</p>
+      <p>Your continued use of WARFIT after any changes constitutes your acceptance of the revised Privacy Policy.</p>
+    </section>
+
+    <!-- X -->
+    <section class="policy-section" id="contact">
+      <h2><span class="num">10</span> Contact Us</h2>
+      <p>Questions, concerns, or data requests? Reach out anytime:</p>
+      <div class="contact-card">
+        <p style="font-size:0.78rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--subtle); margin-bottom:0.75rem;">Loons &amp; Leaves — WARFIT Support</p>
+        <p><a href="mailto:loonsandleaves@gmail.com">loonsandleaves@gmail.com</a></p>
+        <p style="margin-top:0.75rem; font-size:0.82rem; color:var(--subtle);">We aim to respond within 5 business days.</p>
+      </div>
+    </section>
+
+    <hr class="rule" />
+
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; padding-bottom:4rem;">
+      <a href="projects.html" class="btn btn-outline">← Back to Projects</a>
+      <p style="font-size:0.78rem; color:var(--subtle);">© 2026 Loons &amp; Leaves</p>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2026 Loons &amp; Leaves. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="privacy-warfit.html" class="active">WARFIT Privacy</a>
+      <a href="https://discord.gg/Xx2jXBRCKG" target="_blank" rel="noopener">Discord</a>
+    </div>
+  </footer>
+
+</body>
+</html>
